@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: {
-    content: ["./*.html", "./src/*.jsx"],
-  },
+  content: ["./index.html", "./src/**/*.{jsx,js}"],
   theme: {
     fontFamily: {
-      custom: ["Inter", "sans-serif"],
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
     },
     extend: {},
   },

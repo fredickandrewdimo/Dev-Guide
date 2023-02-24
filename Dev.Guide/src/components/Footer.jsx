@@ -1,7 +1,9 @@
 const Footer = () => {
   return (
-    <div className="footer">
-      <h1>Footer</h1>
+    <div className="flex items-center justify-center mx-auto w-11/12 md:w-9/12 py-2">
+      <p className="text-sm text-gray-500">
+        © 2023 Fredick Andrew Dimo. All Rights Reserved.
+      </p>
     </div>
   );
 };
