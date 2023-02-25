@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Create from "./components/create";
 import AllGuides from "./components/AllGuides";
+import GuideDetails from "./components/GuideDetails";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
             </Route>
             <Route exact path="/create">
               <Create />
+            </Route>
+            <Route exact path="/blogs/:id">
+              <GuideDetails />
             </Route>
           </Switch>
         </div>

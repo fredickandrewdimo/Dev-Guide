@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import useFetch from "../customHooks/useFetch";
 import GuideList from "./GuideList";
 
@@ -21,7 +20,7 @@ const Home = () => {
         Create Now
       </button>
       <div className="mt-32">
-        <h1 className="text-2xl md:text-4xl font-bold text-white ">
+        <h1 className="text-3xl md:text-4xl font-bold text-white ">
           ALL GUIDES
         </h1>
         <div className="guide-container mt-10 text-white md:w-4/5 mx-auto text-left">

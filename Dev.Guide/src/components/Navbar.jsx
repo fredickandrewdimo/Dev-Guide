@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="flex items-center justify-between mx-auto w-11/12 md:w-8/12 py-5">
-      <h1 className="text-white font-bold text-xl">DEV.GUIDE</h1>
+      <Link to="/" className="text-white font-bold text-xl">
+        DEV.GUIDE
+      </Link>
       <div className="text-lg text-white text-base">
         <Link to="/" className="mx-2">
           Home
