@@ -1,28 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import GuideList from "./GuideList";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([
-    {
-      title:
-        "From Zero to Front End Hero: A Beginner's Guide to Web Development",
-      body: "Lorem ipsum...",
-      author: "Andrew",
-      id: 1,
-    },
-    {
-      title: "A Step-by-Step Guide to Becoming a Front End Developer",
-      body: "Lorem ipsum...",
-      author: "Andrew",
-      id: 2,
-    },
-    {
-      title:
-        "Mastering JavaScript in 2023: A Comprehensive Guide for Beginners",
-      body: "Lorem ipsum...",
-      author: "Andrew",
-      id: 3,
-    },
-  ]);
+  const [blogs, setBlogs] = useState(null);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      fetch("http://localhost:8000/blogs")
+        .then((res) => {
+          if (!res.ok) {
+            throw Error("Could not fetch the data for that resource");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          setBlogs(data);
+          setIsPending(false);
+          setError(null);
+        })
+        .catch((err) => {
+          setIsPending(false);
+          setError(err.message);
+        });
+    }, 1000);
+  }, []);
 
   return (
     <div className="flex-col text-center">
@@ -40,17 +43,11 @@ const Home = () => {
           ALL GUIDES
         </h1>
         <div className="guide-container mt-10 text-white md:w-4/5 mx-auto text-left">
-          {blogs.map((blog) => (
-            <div
-              className="guide-preview border-2 my-5 rounded p-5 hover:border-green-400 hover:cursor-pointer hover:text-green-400"
-              key={blog.id}
-            >
-              <h2 className="font-bold text-lg md:text-xl">{blog.title}</h2>
-              <p className="mt-3 text-base md:text-lg">
-                Written by {blog.author}
-              </p>
-            </div>
-          ))}
+          {error && (
+            <div className="text-center text-xl text-red-400">{error}</div>
+          )}
+          {isPending && <div className="text-center text-xl">Loading....</div>}
+          {blogs && <GuideList blogs={blogs} />}
         </div>
       </div>
     </div>

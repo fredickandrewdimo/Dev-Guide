@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "From Zero to Front End Hero: A Beginner's Guide to Web Development",
+      "body": "Are you interested in becoming a front end developer, but don't know where to start? Look no further! In this beginner's guide, we'll take you through the basics of web development, including HTML, CSS, and JavaScript. You'll learn how to build and style a basic webpage, as well as how to add interactivity with JavaScript. By the end of this guide, you'll have a solid foundation in front end web development and be well on your way to becoming a front end hero! \n\n We'll also cover important concepts like responsive design, accessibility, and web performance optimization. You'll learn how to make your websites look great and function seamlessly across different devices and screen sizes. We'll also delve into the importance of making your websites accessible to all users, regardless of their abilities, and how to optimize your site's performance for faster load times. With these skills in your arsenal, you'll be able to create professional-looking, user-friendly websites that stand out from the crowd.",
+      "author": "Andrew",
+      "id": 1
+    },
+    {
+      "title": "A Step-by-Step Guide to Becoming a Front End Developer",
+      "body": "Lorem ipsum...",
+      "author": "Andrew",
+      "id": 2
+    },
+    {
+      "title": "Mastering JavaScript in 2023: A Comprehensive Guide for Beginners",
+      "body": "Lorem ipsum...",
+      "author": "Andrew",
+      "id": 3
+    }
+  ]
+}
