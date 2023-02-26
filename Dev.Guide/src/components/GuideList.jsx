@@ -5,7 +5,7 @@ const GuideList = ({ blogs }) => {
     <div className="guide-list">
       {blogs.map((blog) => (
         <div
-          className="guide-preview border-2 my-5 rounded-lg p-5 hover:border-green-400 hover:cursor-pointer hover:text-green-400"
+          className="guide-preview border-2 border-gray-400 my-5 rounded-lg p-5 hover:border-green-400 hover:cursor-pointer hover:text-green-400 text-gray-400"
           key={blog.id}
         >
           <Link to={`/blogs/${blog.id}`}>
