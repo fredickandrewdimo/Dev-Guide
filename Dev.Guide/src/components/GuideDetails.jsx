@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import useFetch from "../customHooks/useFetch";
 
 const GuideDetails = () => {
@@ -8,6 +8,15 @@ const GuideDetails = () => {
     error,
     isPending,
   } = useFetch("http://localhost:8000/blogs/" + id);
+  const history = useHistory();
+
+  const handleDelete = () => {
+    fetch("http://localhost:8000/blogs/" + blog.id, {
+      method: "DELETE",
+    }).then(() => {
+      history.push("/guides");
+    });
+  };
 
   return (
     <div className="text-white">
@@ -20,6 +29,12 @@ const GuideDetails = () => {
             Written by {blog.author}
           </p>
           <div className="text-base md:text-lg">{blog.body}</div>
+          <button
+            onClick={handleDelete}
+            className="bg-green-400 text-neutral-900 mt-16 py-2 px-4 md:py-3 md:px-12 rounded font-bold hover:bg-green-600"
+          >
+            DELETE
+          </button>
         </article>
       )}
     </div>
