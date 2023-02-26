@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Create from "./components/Create";
 import AllGuides from "./components/AllGuides";
 import GuideDetails from "./components/GuideDetails";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -17,14 +18,17 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/guides">
+            <Route path="/guides">
               <AllGuides />
             </Route>
-            <Route exact path="/create">
+            <Route path="/create">
               <Create />
             </Route>
-            <Route exact path="/blogs/:id">
+            <Route path="/blogs/:id">
               <GuideDetails />
+            </Route>
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>
